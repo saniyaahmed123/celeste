@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My E-commerce Site</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg px-5">
+        <div class="container-fluid">
+            <a class="navbar-brand " href="#"><img src="assets/logo2.png" class="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+                aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav  mb-2 mb-lg-0 ms-auto gap-4 "> ">
+                    <li class="nav-item ">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="product.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">About us</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <!-- -----------carousel---------------------- -->
+   
+    <div id="carouselDesktop" class="carousel carousel-dark slide carousel-fade d-none d-md-block" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselDesktop" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#carouselDesktop" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carouselDesktop" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="3000">
+                <img src="assets/hero/3.webp" class="d-block w-100" alt="New Arrivals">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5 class="display-4 fw-bold">NEW ARRIVALS</h5>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="assets/hero/2.webp" class="d-block w-100" alt="Spring Fits">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5 class="display-4 fw-bold">Spring fits</h5>
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="assets/hero/1.webp" class="d-block w-100" alt="Season Sale">
+                <div class="carousel-caption d-none d-md-block">
+                    <h5 class="display-4 fw-bold">SEASON SALE</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="carouselMobile" class="carousel carousel-dark slide carousel-fade d-md-none" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselMobile" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#carouselMobile" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carouselMobile" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="3000">
+                <img src="assets/hero/s1.webp" class="d-block w-100" alt="Mobile New Arrivals">
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="assets/hero/s2.webp" class="d-block w-100" alt="Mobile Spring Fits">
+            </div>
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="assets/hero/s3.webp" class="d-block w-100" alt="Mobile Season Sale">
+            </div>
+        </div>
+    </div>
+        <footer>
+            <div>
+            </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>

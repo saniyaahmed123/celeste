@@ -1,0 +1,303 @@
+.navbar{
+    background: #380414;
+    position:sticky;
+    top: 0;
+    z-index: 4;
+}
+body{
+    background: #FFFDF5;
+    position: relative;
+}
+*{
+    font-family: 'Poppins', sans-serif;
+    flood-color: white !important;
+}
+.logo{
+    width: 200px;    
+}
+.nav-item .nav-link{
+    color: white !important;
+    font-size: 20px;
+}
+.hero-sec{
+    background: #e6e2e1;
+}
+.hero{
+    width: 600px;
+}
+.hero-text-sec{
+    padding: 50px !important;
+}
+.grandcontainer{
+    gap: 20px !important;
+}
+.btn{
+    background: #380414 !important;
+    box-shadow: 0px 0px 10px #b4b3b3;
+    
+    color: white;
+    
+}
+.btn:hover{
+    background: #380414 !important;
+    color: white;
+    opacity: 0.8;
+    box-shadow: 0px 0px 10px #380414;
+}
+.card {
+    background-color: #f0f0f0;
+    height: 450px;
+    border: none;
+    display: flex; /* Changed from grid to flex for better stacking */
+    flex-direction: column;
+    transition: 0.5s ease;
+    overflow: hidden;
+    display: block;
+}
+
+/* 4. Ensure the row doesn't have extra margins pushing cards off-screen */
+.card-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px !important; 
+    margin-left: 2% !important; 
+    margin-right: 0 !important;
+}
+.card-img-top {
+    height: 300px;
+    width: 100%;
+    overflow: hidden; 
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0; 
+}
+
+.card-img-top img {
+    /* Change width back to 100% to fill the card */
+    width: 100%; 
+    height: 100%;
+    /* Use 'cover' to crop perfectly or 'contain' to show the whole item */
+    object-fit: cover; 
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* Remove the manual margins that were squishing the image */
+    margin: 0; 
+    transition: opacity 0.4s ease;
+}
+
+/* 2. Shared Image Properties */
+.card-img-top img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;    /* Crops perfectly */
+    object-position: center;
+    position: absolute;   /* Stacks them on top of each other */
+    top: 0;
+    left: 0;
+    transition: opacity 0.4s ease; /* Smooth fade */
+}
+
+/* 3. The Hover Image (Model) */
+
+
+/* 4. The Base Image (Product) */
+.base-img {
+    z-index: 1;
+}
+
+/* 5. The Trigger */
+.card:hover .hover-img {
+    opacity: 1; /* Shows the model image on hover */
+}
+.card {
+    background-color:#f0f0f0;
+    width: 250px;
+    border: none;
+    display: grid;
+    transition: 0.5s ease;
+    height: 450px;
+    overflow: hidden; /* Ensures nothing leaks out of the card */
+}
+
+.card-img-top {
+    height: 300px;
+    width: 100%;       /* This makes the container exactly 300px wide */
+    overflow: hidden; 
+    position: relative; 
+
+    
+}
+.card-text,.card-title{
+    text-align: left;
+     font-weight: bold;
+     margin-left: 20px;
+}
+.card-body button{
+    margin-left: 10px;
+}
+.card-img-top img {
+    height: 100%;
+    width: 80%;
+    object-fit: cover;   
+    object-position: center; 
+    position: absolute;
+    top: 0;
+    margin-left: 30px;
+    left: 0;
+    text-align: center;
+    transition: opacity 0.4s ease;
+}
+    
+.card{
+    background-color:#f0f0f0;
+
+    width: 280px !important;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding-left: 0px;
+    display: grid;
+    padding: 10px;
+
+}
+.shop{
+      border: 3px solid #ffffff;
+    border-radius: 0; 
+    padding: 10px 15px;
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+   text-shadow: 3px 3px 13px #000000;
+    cursor: pointer;
+    background-color: transparent;
+    transition: all 0.3s ease;
+   box-shadow: 7px 4px 18px #000000;
+
+}/* 1. Smooth Fade Transition */
+.carousel-fade .carousel-item {
+    transition-duration: 1.5s; /* Slows down the fade for elegance */
+}
+
+/* 2. Custom Indicators (Lines instead of dots) */
+.carousel-indicators [button] {
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+}
+
+/* 3. Text Animation (Zoom-in effect when slide becomes active) */
+.carousel-item.active .carousel-caption h5 {
+    animation: fadeInUp 1s ease-out;
+}
+
+.carousel-item.active .carousel-caption p {
+    animation: fadeInUp 1.5s ease-out;
+}
+
+/* The Animation Keyframes */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Optional: Make images slightly zoom while active */
+.carousel-item.active img {
+    animation: slowZoom 5s linear forwards;
+}
+
+@keyframes slowZoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); }
+}
+.carousel-caption h5 {
+    color: #ffffff !important;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    
+    /* Deep Logic Shadow: 
+       1. Sharp black outline (1px) 
+       2. Medium blur for depth (10px)
+       3. Large soft wash for total isolation (30px) */
+    text-shadow: 
+        2px 2px 4px rgba(0, 0, 0, 0.8), 
+        0px 0px 20px rgba(0, 0, 0, 0.4),
+        0px 0px 40px rgba(0, 0, 0, 0.2);
+}
+.carousel-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* This creates a soft dark tint ONLY at the bottom where the text is */
+    background: linear-gradient(
+        to bottom, 
+        rgba(0, 0, 0, 0) 0%, 
+        rgba(0, 0, 0, 0.2) 50%, 
+        rgba(0, 0, 0, 0.5) 100%
+    );
+    z-index: 1;
+}
+
+/* Ensure the text stays on top of the overlay */
+.carousel-caption {
+    z-index: 2;
+}
+/* General Sidebar Styling (Desktop) */
+@media (min-width: 992px) {
+    .cat-div {
+        background: #dedede;
+        height: auto;
+        min-height: 70vh;
+        position: sticky; /* Sticky is better than fixed for sidebars */
+        top: 20px;
+        z-index: 3;
+        border-radius: 8px;
+    }
+}
+
+/* Offcanvas Sidebar Styling (Mobile) */
+.offcanvas-body .cat-div-inner {
+    padding: 10px;
+}
+
+/* Reset your grandcontainer logic - Bootstrap Columns handle this now! */
+.grandcontainer {
+    margin-left: 0 !important;
+    width: 100% !important;
+}
+
+/* Filter Styling */
+.custom-filter {
+    border: 2px solid #380414;
+    border-radius: 4px;
+    padding: 8px;
+    width: 100%;
+}
+
+/* Card Improvements */
+.card {
+    background-color: #f0f0f0;
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%; /* Ensures cards in a row are same height */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}

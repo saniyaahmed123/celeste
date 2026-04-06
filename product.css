@@ -1,0 +1,354 @@
+.cat-div{
+    background:#dedede;
+    height: 80vh;
+    margin: 1%;
+    width: 20%;
+    position: sticky;
+    z-index: 3;
+
+
+}
+.product-page-container{
+    position: absolute;
+    position: absolute;
+    left: 0%;
+    height: 80vh;
+    margin: 1%;
+    width: 20%;
+
+}
+body{
+    background-color: #ffffff;
+}
+
+.card{
+    background-color:#f0f0f0;
+
+    width: 280px !important;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding-left: 0px;
+    display: grid;
+    padding: 10px;
+
+}
+.card-img-top{
+       
+    height: 300px;     /* Set your fixed height */
+  overflow: hidden; 
+}
+.card-img-top img{
+
+
+    text-align: center;
+   height:auto;
+   width: 70%;
+     
+
+}
+.card-body{
+    width: 300px;
+    padding: 30px;
+    text-align: left;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
+
+}
+.card-title{
+    text-align: left;
+     font-size: 14px;
+     font-weight: bold;
+}
+
+
+.btn{
+    width:100px;
+    background-color: rgb(36, 36, 36);
+    color: rgb(254, 254, 254);
+    font-weight: 400;
+}
+.p4{
+    width: 260px;
+}
+.card:hover{
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    transform: translatey(-5px);
+    transition: 0.5s ease;
+}
+.btn:hover{
+       background-color: rgb(88, 87, 87);
+    color:  rgb(255, 255, 255);
+}
+.col-lg-3{
+    margin-bottom: 20px;
+}
+.card-img-top {
+    height: 300px;
+    width: 260px; /* Match the card width */
+    overflow: hidden; 
+    display: flex;           /* Use flexbox to center the image */
+    align-items: center;     /* Vertical center */
+    justify-content: center;
+    position: relative;
+     /* Horizontal center */
+}
+.hover-img{
+   z-index: 2;
+    opacity: 0;
+}
+.card-img-top img {
+    height: 100%;            /* Force the image to fill the height */
+    width: 100%;             /* Force the image to fill the width */
+    object-fit: cover;       /* THIS IS THE KEY: it crops the image to fit without squishing */
+    object-position: center;
+    position: absolute; /* Ensures the crop happens from the center */
+}
+.card:hover .hover-img{
+    opacity: 1;
+}
+/* 1. The Container */
+.card-img-top {
+    height: 300px;
+    width: 100%;       /* Use 100% so it fills the card width */
+    overflow: hidden !important; /* Hides any overflow */
+    position: relative; /* Essential for absolute children */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0; /* Fallback color */
+}
+
+/* 2. Shared Image Properties */
+.card-img-top img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;    /* Crops perfectly */
+    object-position: center;
+    position: absolute;   /* Stacks them on top of each other */
+    top: 0;
+    left: 0;
+    transition: opacity 0.4s ease; /* Smooth fade */
+}
+
+/* 3. The Hover Image (Model) */
+
+
+/* 4. The Base Image (Product) */
+.base-img {
+    z-index: 1;
+}
+
+/* 5. The Trigger */
+.card:hover .hover-img {
+    opacity: 1; /* Shows the model image on hover */
+}
+.card {
+    background-color:#f0f0f0;
+    width: 250px;
+    border: none;
+    display: grid;
+    transition: 0.5s ease;
+    height: 450px;
+    overflow: hidden; /* Ensures nothing leaks out of the card */
+}
+
+.card-img-top {
+    height: 300px;
+    width: 100%;       /* This makes the container exactly 300px wide */
+    overflow: hidden; 
+    position: relative; 
+
+    
+}
+.card-text,.card-title{
+    text-align: left;
+     font-weight: bold;
+     margin-left: 20px;
+}
+.card-body button{
+    margin-left: 10px;
+}
+.card-img-top img {
+    height: 100%;
+    width: 80%;
+    /* This is what handles the wide image: */
+    object-fit: cover;   
+    object-position: center; 
+    position: absolute;
+    top: 0;
+    margin-left: 30px;
+    left: 0;
+    text-align: center;
+    transition: opacity 0.4s ease;
+}
+
+.hover-img {
+    z-index: 2;
+    opacity: 0; 
+    margin-left: 30px !important;
+    margin-right: 5px !important;
+    border-radius: 10px;
+}
+
+.base-img {
+    z-index: 1;
+    margin-left: 0px;
+    
+
+}
+
+.card:hover .hover-img {
+    opacity: 1; 
+}
+.card-row{
+     gap: 20px  !important;
+     margin-left: 22% !important;
+}
+.cat-div {
+    background: #dedede;
+    height: 80vh;
+    margin: 1%;
+    width: 20%;
+    position: fixed; /* Changed back to fixed so it stays while scrolling */
+    top: 100px;      /* Adjust based on your navbar height */
+    z-index: 3;
+}
+
+/* Add this to the container holding your cards */
+.grandcontainer {
+    margin-left: 22% !important; /* This clears the space for cat-div */
+}
+.cat-div {
+    background: #dedede;
+    height: 80vh;
+    /* Remove general margin and specify only top/left if needed */
+    margin: 0; 
+    margin-top: 100px;
+    margin-left: 10px; 
+    margin-right: 20px !important;
+    
+    width: 20%;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.grandcontainer {
+    /* Set this to match the sidebar width exactly (20%) plus any tiny offset you want */
+    margin-left: 21% !important; 
+    width: 78% !important;
+    padding: 0;
+}
+
+.card-row {
+    display: flex;
+    flex-wrap: wrap;
+    /* This gap handles the space BETWEEN cards, not the space next to the sidebar */
+    gap: 20px !important; 
+    margin-left: 20px !important; 
+}
+/* 1. Ensure the container has enough room for 4 columns */
+.grandcontainer {
+    margin-left: 21% !important; 
+    width: 78% !important;
+    padding: 0;
+    overflow-x: hidden; /* Prevents unwanted horizontal scroll */
+}
+
+/* 2. Target the columns to force the 4-per-row layout */
+.grandcontainer .col-lg-3 {
+    /* (100% / 4) minus a bit for the 20px gaps */
+    width: calc(25% - 15px) !important; 
+    flex: 0 0 auto;
+}
+
+/* 3. Adjust the card width to be responsive within that column */
+.card {
+    background-color: #f0f0f0;
+    height: 450px;
+    border: none;
+    display: flex; /* Changed from grid to flex for better stacking */
+    flex-direction: column;
+    transition: 0.5s ease;
+    overflow: hidden;
+}
+
+/* 4. Ensure the row doesn't have extra margins pushing cards off-screen */
+.card-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px !important; 
+    margin-left: 2% !important; 
+    margin-right: 0 !important;
+}
+.card-img-top {
+    height: 300px;
+    width: 100%;
+    overflow: hidden; 
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0; 
+}
+
+.card-img-top img {
+    /* Change width back to 100% to fill the card */
+    width: 100%; 
+    height: 100%;
+    /* Use 'cover' to crop perfectly or 'contain' to show the whole item */
+    object-fit: cover; 
+    object-position: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* Remove the manual margins that were squishing the image */
+    margin: 0; 
+    transition: opacity 0.4s ease;
+}
+
+.hover-img {
+    z-index: 2;
+    opacity: 0; 
+    /* Ensure hover img also has no margins */
+    margin: 0 !important;
+}
+
+.base-img {
+    z-index: 1;
+    margin: 0 !important;
+}
+select{
+    margin-bottom: 0px;
+}
+
+/* Custom styling for the Select Box */
+
+.custom-filter {
+    border: 2px solid #000;
+    border-radius: 0; 
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    
+    letter-spacing: 1px;
+    cursor: pointer;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    min-width: 80%;
+}
+.custom-filter:focus {
+    border-color:#380414;
+    box-shadow: 5px 4px 12px rgba(143, 120, 120, 0.15) !important;
+    outline: none;
+}
+.cat-div{
+    display: flex;
+    flex-direction: column;
+}
+.seacrh{
+    align-items: center;
+}

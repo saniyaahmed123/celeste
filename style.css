@@ -1,54 +1,66 @@
-.navbar{
-    background: #380414;
-    position:sticky;
+.navbar {
+    background: #000000 !important;
+    position: sticky;
     top: 0;
-    z-index: 4;
+    z-index: 11;
 }
-body{
+
+body {
     background: #FFFDF5;
     position: relative;
 }
-*{
+
+* {
     font-family: 'Poppins', sans-serif;
     flood-color: white !important;
 }
-.logo{
-    width: 200px;    
+
+.logo {
+    width: 200px;
 }
-.nav-item .nav-link{
+
+.nav-item .nav-link {
     color: white !important;
     font-size: 20px;
 }
-.hero-sec{
+
+.hero-sec {
     background: #e6e2e1;
 }
-.hero{
+
+.hero {
     width: 600px;
 }
-.hero-text-sec{
+
+.hero-text-sec {
     padding: 50px !important;
 }
-.grandcontainer{
+
+.grandcontainer {
     gap: 20px !important;
 }
-.btn{
+
+.btn {
     background: #380414 !important;
     box-shadow: 0px 0px 10px #b4b3b3;
-    
+
     color: white;
-    
+
 }
-.btn:hover{
+
+.btn:hover {
     background: #380414 !important;
     color: white;
     opacity: 0.8;
     box-shadow: 0px 0px 10px #380414;
 }
+
 .card {
     background-color: #f0f0f0;
     height: 450px;
     border: none;
-    display: flex; /* Changed from grid to flex for better stacking */
+    display: flex;
+    /* Changed from grid to flex for better stacking */
     flex-direction: column;
     transition: 0.5s ease;
     overflow: hidden;
@@ -59,33 +71,34 @@ body{
 .card-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px !important; 
-    margin-left: 2% !important; 
+    gap: 20px !important;
+    margin-left: 2% !important;
     margin-right: 0 !important;
 }
+
 .card-img-top {
     height: 300px;
     width: 100%;
-    overflow: hidden; 
+    overflow: hidden;
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f0f0f0; 
+    background-color: #f0f0f0;
 }
 
 .card-img-top img {
     /* Change width back to 100% to fill the card */
-    width: 100%; 
+    width: 100%;
     height: 100%;
     /* Use 'cover' to crop perfectly or 'contain' to show the whole item */
-    object-fit: cover; 
+    object-fit: cover;
     object-position: center;
     position: absolute;
     top: 0;
     left: 0;
     /* Remove the manual margins that were squishing the image */
-    margin: 0; 
+    margin: 0;
     transition: opacity 0.4s ease;
 }
 
@@ -93,12 +106,15 @@ body{
 .card-img-top img {
     height: 100%;
     width: 100%;
-    object-fit: contain;    /* Crops perfectly */
+    object-fit: contain;
+    /* Crops perfectly */
     object-position: center;
-    position: absolute;   /* Stacks them on top of each other */
+    position: absolute;
+    /* Stacks them on top of each other */
     top: 0;
     left: 0;
-    transition: opacity 0.4s ease; /* Smooth fade */
+    transition: opacity 0.4s ease;
+    /* Smooth fade */
 }
 
 /* 3. The Hover Image (Model) */
@@ -111,39 +127,47 @@ body{
 
 /* 5. The Trigger */
 .card:hover .hover-img {
-    opacity: 1; /* Shows the model image on hover */
+    opacity: 1;
+    /* Shows the model image on hover */
 }
+
 .card {
-    background-color:#f0f0f0;
+    background-color: #f0f0f0;
     width: 250px;
     border: none;
     display: grid;
     transition: 0.5s ease;
     height: 450px;
-    overflow: hidden; /* Ensures nothing leaks out of the card */
+    overflow: hidden;
+    /* Ensures nothing leaks out of the card */
 }
 
 .card-img-top {
     height: 300px;
-    width: 100%;       /* This makes the container exactly 300px wide */
-    overflow: hidden; 
-    position: relative; 
+    width: 100%;
+    /* This makes the container exactly 300px wide */
+    overflow: hidden;
+    position: relative;
 
-    
+
 }
-.card-text,.card-title{
+
+.card-text,
+.card-title {
     text-align: left;
-     font-weight: bold;
-     margin-left: 20px;
+    font-weight: bold;
+    margin-left: 20px;
 }
-.card-body button{
+
+.card-body button {
     margin-left: 10px;
 }
+
 .card-img-top img {
     height: 100%;
     width: 80%;
-    object-fit: cover;   
-    object-position: center; 
+    object-fit: cover;
+    object-position: center;
     position: absolute;
     top: 0;
     margin-left: 30px;
@@ -151,9 +175,9 @@ body{
     text-align: center;
     transition: opacity 0.4s ease;
 }
-    
-.card{
-    background-color:#f0f0f0;
+
+.card {
+    background-color: #f0f0f0;
 
     width: 280px !important;
     align-items: center;
@@ -164,24 +188,28 @@ body{
     padding: 10px;
 
 }
-.shop{
-      border: 3px solid #ffffff;
-    border-radius: 0; 
+
+.shop {
+    border: 3px solid #ffffff;
+    border-radius: 0;
     padding: 10px 15px;
     font-size: 1.1rem;
     text-decoration: none;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 2px;
-   text-shadow: 3px 3px 13px #000000;
+    text-shadow: 3px 3px 13px #000000;
     cursor: pointer;
     background-color: transparent;
     transition: all 0.3s ease;
-   box-shadow: 7px 4px 18px #000000;
+    box-shadow: 7px 4px 18px #000000;
 
-}/* 1. Smooth Fade Transition */
+}
+
+/* 1. Smooth Fade Transition */
 .carousel-fade .carousel-item {
-    transition-duration: 1.5s; /* Slows down the fade for elegance */
+    transition-duration: 1.5s;
+    /* Slows down the fade for elegance */
 }
 
 /* 2. Custom Indicators (Lines instead of dots) */
@@ -206,6 +234,7 @@ body{
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -218,24 +247,31 @@ body{
 }
 
 @keyframes slowZoom {
-    from { transform: scale(1); }
-    to { transform: scale(1.05); }
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.05);
+    }
 }
+
 .carousel-caption h5 {
     color: #ffffff !important;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 2px;
-    
+
     /* Deep Logic Shadow: 
        1. Sharp black outline (1px) 
        2. Medium blur for depth (10px)
        3. Large soft wash for total isolation (30px) */
-    text-shadow: 
-        2px 2px 4px rgba(0, 0, 0, 0.8), 
+    text-shadow:
+        2px 2px 4px rgba(0, 0, 0, 0.8),
         0px 0px 20px rgba(0, 0, 0, 0.4),
         0px 0px 40px rgba(0, 0, 0, 0.2);
 }
+
 .carousel-item::after {
     content: "";
     position: absolute;
@@ -244,12 +280,10 @@ body{
     width: 100%;
     height: 100%;
     /* This creates a soft dark tint ONLY at the bottom where the text is */
-    background: linear-gradient(
-        to bottom, 
-        rgba(0, 0, 0, 0) 0%, 
-        rgba(0, 0, 0, 0.2) 50%, 
-        rgba(0, 0, 0, 0.5) 100%
-    );
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.2) 50%,
+            rgba(0, 0, 0, 0.5) 100%);
     z-index: 1;
 }
 
@@ -257,13 +291,15 @@ body{
 .carousel-caption {
     z-index: 2;
 }
+
 /* General Sidebar Styling (Desktop) */
 @media (min-width: 992px) {
     .cat-div {
         background: #dedede;
         height: auto;
         min-height: 70vh;
-        position: sticky; /* Sticky is better than fixed for sidebars */
+        position: sticky;
+        /* Sticky is better than fixed for sidebars */
         top: 20px;
         z-index: 3;
         border-radius: 8px;
@@ -287,17 +323,185 @@ body{
     border-radius: 4px;
     padding: 8px;
     width: 100%;
-}
 
+}
+.limg{
+    width:200px;
+}
 /* Card Improvements */
 .card {
     background-color: #f0f0f0;
     border: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    height: 100%; /* Ensures cards in a row are same height */
+    height: 100%;
+    /* Ensures cards in a row are same height */
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
+
+o-slide img {
+    width: 250px;
+    height: 100px;
+
+
+}
+
+.logos {
+    overflow: hidden;
+    padding: 60px 0;
+    white-space: nowrap;
+    position: relative;
+    margin-right: 100px;
+
+
+}
+
+.logos:before {
+    content: "";
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), rgb(255, 255, 255));
+}
+
+.logos:before,
+.logos:after {
+    top: 0;
+
+    width: 250px;
+    position: absolute;
+    height: 100%;
+
+    z-index: 2;
+
+
+}
+
+.logos:after {
+
+    width: 800px;
+
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), black);
+
+
+}
+
+.logos:hover .logo-slide {
+    animation-play-state: paused;
+}
+
+.logo-slide {
+    animation: 35s slide infinite linear;
+    display: inline-block;
+
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(0%);
+
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+
+}
+
+@media (max-width: 1024px) {
+    .clients-text h2 {
+        font-size: 28px;
+        margin-bottom: 20px;
+
+    }
+
+    .hero-text {
+        margin-top: 100px;
+    }
+
+    .hero-text h1 {
+        font-size: 47px;
+    }
+
+    .role-line {
+        font-size: 31px;
+    }
+
+    .logo-slide img {
+        width: 230px;
+        height: 100px;
+
+
+    }
+}.tracking-widest {
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+}/* Container for the whole card */
+.category-card-clean {
+    text-decoration: none !important;
+    color: #000 !important;
+    display: block;
+}
+
+/* Image Container */
+.category-img-wrapper {
+    position: relative;
+    height: 500px; /* Taller for a more editorial look */
+    overflow: hidden;
+    background-color: #f4f4f4;
+    margin-bottom: 15px;
+}
+
+.category-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1.2s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+/* Zoom effect on hover */
+.category-card-clean:hover .category-img-wrapper img {
+    transform: scale(1.08);
+}
+
+/* Text Styling below image */
+.category-info {
+    text-align: center;
+}
+
+.category-name {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 4px;
+}
+
+.category-link-text {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666;
+    position: relative;
+}
+
+/* Subtle underline animation */
+.category-link-text::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: -2px;
+    left: 0;
+    background-color: #000;
+    transition: width 0.3s ease;
+}
+
+.category-card-clean:hover .category-link-text::after {
+    width: 100%;
+}
+.navbar-brand img{
+    height: 80px;
 }

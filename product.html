@@ -4,256 +4,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CELESTE</title>
+    <title>CELESTE | Products</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="product.css">
 </head>
 
 <body>
-    <!DOCTYPE html>
-    <html lang="en">
+    <nav class="navbar navbar-expand-lg px-5 shadow-sm sticky-top ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="logo2.png" class="logo" alt="Celeste Logo" style="height: 70px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>CELESTE</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="product.css">
-    </head>
-
-    <body>
-        <nav class="navbar navbar-expand-lg px-5">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#"><img src="assets/logo2.png" class="logo"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarToggler">
-                    <ul class="navbar-nav mb-2 mb-lg-0 ms-auto gap-4">
-                        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="product.html">Products</a></li>
-                        <li class="nav-item"><a class="nav-link active" href="#">About us</a></li>
-                    </ul>
-                </div>
-                <button class="btn btn-outline-dark ms-lg-3" type="button" data-bs-toggle="offcanvas"
-                    data-bs-target="#sidebarLeft">
-                    <i class="bi bi-filter"></i> Filters
+            <div class="collapse navbar-collapse" id="navbarToggler">
+                <ul class="navbar-nav mb-2 mb-lg-0 ms-auto gap-4">
+                    <li class="nav-item"><a class="nav-link fs-5" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active fs-5" href="product.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link fs-5" href="about.html">About us</a></li>
+                </ul>
+                <button class="btn ms-lg-3 border-0 filtericon" style="box-shadow: none;background-color: black;"
+                    type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarFilters">
+                    <i class="bi bi-filter fs-3 "></i>
                 </button>
             </div>
-        </nav>
-        <!-- <img src="assets/tshirts/t-shirt3.jpg" alt=""> -->
-        <div class="product-page-container">
-            <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarLeft" aria-labelledby="sidebarLeftLabel">
+        </div>
+    </nav>
 
-                <div class="offcanvas-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
+    <main class="container-fluid my-5 px-md-5">
+        <div class="d-flex justify-content-end mb-0">
+            <div class="dropdown custom-sort-dropdown">
+                <button class="btn dropdown-toggle d-flex justify-content-between align-items-center" type="button"
+                    data-bs-toggle="dropdown">
+                    <span id="currentBrandLabel">All Brands</span>
+                    <i class="bi bi-chevron-down ms-4"></i>
+                </button>
 
-                <div class="offcanvas-body ">
-                    <div class="cat-div p-4 ms-5 ">
-                        <label for="categoryFilter" class="form-label fw-bold mt-3 mx-auto mb-0  fs-5 text-uppercase"
-                            style="color: #380414;">Shop by Category</label>
-                        <hr class=" mb-3 fw-bold  " style="color: #380414; height: 10px;">
-                        <label class=" fw-bold mb-1">Gender : </label>
-
-                        <select id="genderSelect" class="form-select custom-filter" onchange="updateFilters()">
-                            <option value="all">All Genders</option>
-                            <option value="women">Women</option>
-                            <option value="men">Men</option>
-                        </select>
-                        <hr>
-
-                        <label class=" fw-bold mb-1">Brand : </label>
-
-                        <select id="brandSelect" class="form-select custom-filter" onchange="updateFilters()">
-                            <option value="all">All Brands</option>
-                            <option value="nike">Nike</option>
-                            <option value="adidas">Adidas</option>
-                            <option value="zara">Zara</option>
-                        </select>
-                        <hr>
-
-                        <label class=" fw-bold mb-1">Type : </label>
-
-                        <select id="typeSelect" class="form-select custom-filter" onchange="updateFilters()">
-                            <option value="all">All Types</option>
-                            <option value="t_shirts">T-Shirts</option>
-                            <option value="pants">Pants</option>
-                            <option value="dress">Dresses</option>
-                            <option value="shirts">Shirts</option>
-                        </select>
-                        <hr>
-
-                        <button class="search mx-auto my-3 btn w-100">APPLY FILTERS</button>
-
-                    </div>
-                </div>
-
+                <ul class="dropdown-menu dropdown-menu-end shadow-sm">
+                    <li><a class="dropdown-item" href="#" data-brand="" onclick="handleBrandFilter(this)">All Brands</a>
+                    </li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#" data-brand="nike" onclick="handleBrandFilter(this)">Nike</a>
+                    </li>
+                    <li><a class="dropdown-item" href="#" data-brand="adidas"
+                            onclick="handleBrandFilter(this)">Adidas</a></li>
+                </ul>
             </div>
-
-        </div>
-        <div class="cat-div p-4 ">
-            <label for="categoryFilter" class="form-label fw-bold mt-3 mx-auto mb-0  fs-5 text-uppercase"
-                style="color: #380414;">Shop by Category</label>
-            <hr class=" mb-3 fw-bold  " style="color: #380414; height: 10px;">
-            <label class=" fw-bold mb-1">Gender : </label>
-
-            <select id="genderSelect" class="form-select custom-filter" onchange="updateFilters()">
-                <option value="all">All Genders</option>
-                <option value="women">Women</option>
-                <option value="men">Men</option>
-            </select>
-            <hr>
-
-            <label class=" fw-bold mb-1">Brand : </label>
-
-            <select id="brandSelect" class="form-select custom-filter" onchange="updateFilters()">
-                <option value="all">All Brands</option>
-                <option value="nike">Nike</option>
-                <option value="adidas">Adidas</option>
-                <option value="zara">Zara</option>
-            </select>
-            <hr>
-
-            <label class=" fw-bold mb-1">Type : </label>
-
-            <select id="typeSelect" class="form-select custom-filter" onchange="updateFilters()">
-                <option value="all">All Types</option>
-                <option value="t_shirts">T-Shirts</option>
-                <option value="pants">Pants</option>
-                <option value="dress">Dresses</option>
-                <option value="shirts">Shirts</option>
-            </select>
-            <hr>
-
-            <button class="search mx-auto my-3 btn w-100">APPLY FILTERS</button>
-
-        </div>
         </div>
 
-        <div id="productsGrid" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 grandcontainer my-5">
+        <div id="productsGrid" class="row g-4 row-cols-2 mt-0 row-cols-md-3 row-cols-lg-4">
         </div>
-        <!-- <div class="grandcontainer  my-5">
-        <div class="row g-0 card-row">
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="card">
-                    <div class="card-img-top">
-                        <img src="assets/shirts/blackshirt.png" class="product-img">
-                        <img src="assets/shirts/blackshirthover.png" class="hover-img base-img">
-                    </div>
-                    <div class="card-body d-flex flex-column justify-content-between mt-0">
-                        <h5 class="card-title">Corduroy Fleece Winter Jacket</h5>
-                        <p class="card-text">$17.00</p>
-                        <button class="btn">buy now</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="card">
-                    <div class="card-img-top">
-                        <img src="assets/shirts/lavendershirt.jpg" class="product-img">
-                        <img src="assets/shirts/lavendershirthover.jpg" class="hover-img base-img">
-                    </div>
-                    <div class="card-body d-flex flex-column justify-content-between mt-0">
-                        <h5 class="card-title">Corduroy Fleece Winter Jacket</h5>
-                        <p class="card-text">$17.00</p>
-                        <button class="btn">buy now</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="card">
-                    <div class="card-img-top">
-                        <img src="assets/shirts/stripsshirt.jpg" class="product-img">
-                        <img src="assets/shirts/stripsshirthover.jpg" class="hover-img base-img">
-                    </div>
-                    <div class="card-body d-flex flex-column justify-content-between mt-0">
-                        <h5 class="card-title">Corduroy Fleece Winter Jacket</h5>
-                        <p class="card-text">$17.00</p>
-                        <button class="btn">buy now</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="card">
-                    <div class="card-img-top">
-                        <img src="assets/shirts/brownshirt.jpg" class="product-img">
-                        <img src="assets/shirts/brownshirthover.jpg" class="hover-img base-img">
-                    </div>
-                    <div class="card-body d-flex flex-column justify-content-between mt-0">
-                        <h5 class="card-title">Corduroy Fleece Winter Jacket</h5>
-                        <p class="card-text">$17.00</p>
-                        <button class="btn">buy now</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
+    </main>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="app.js"></script>
-    </body>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarFilters">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title fw-bold" id="sidebarFiltersLabel">CELESTE</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
 
-    </html>
-    <!-- <div class="grandcontainer  my-5">
-        <div class="row g-0 card-row">
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="card">
-                    <div class="card-img-top">
-                        <img src="assets/shirts/blackshirt.png" class="product-img">
-                        <img src="assets/shirts/blackshirthover.png" class="hover-img base-img">
-                    </div>
-                    <div class="card-body d-flex flex-column justify-content-between mt-0">
-                        <h5 class="card-title">Corduroy Fleece Winter Jacket</h5>
-                        <p class="card-text">$17.00</p>
-                        <button class="btn">buy now</button>
+        <div class="offcanvas-body p-0 d-flex flex-column">
+            <div class="accordion accordion-flush" id="filterAccordion">
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#menuWomen">
+                            WOMEN
+                        </button>
+                    </h2>
+                    <div id="menuWomen" class="accordion-collapse collapse" data-bs-parent="#filterAccordion">
+                        <div class="accordion-body p-0">
+                            <ul class="list-group list-group-flush ps-4">
+                                <li class="list-group-item border-0 py-2">
+                                    <a href="#" class="filter-link"
+                                        onclick="filterProducts('women', 'TSHIRTS')">TSHIRTS</a>
+                                </li>
+                                <li class="list-group-item border-0 py-2">
+                                    <a href="#" class="filter-link"
+                                        onclick="filterProducts('women', 'COATS & CARDIGANS')">COATS & CARDIGANS</a>
+                                </li>
+                                <li class="list-group-item border-0 py-2">
+                                    <a href="#" class="filter-link"
+                                        onclick="filterProducts('women', 'SHIRTS')">SHIRTS</a>
+                                </li>
+                                <li class="list-group-item border-0 py-2">
+                                    <a href="#" class="filter-link" onclick="filterProducts('women', 'PANTS')">PANTS</a>
+                                </li>
+                                <li class="list-group-item border-0 py-2">
+                                    <a href="#" class="filter-link"
+                                        onclick="filterProducts('women', 'DRESSES')">DRESSES</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#menuMen">
+                            MEN
+                        </button>
+                    </h2>
+                    <div id="menuMen" class="accordion-collapse collapse" data-bs-parent="#filterAccordion">
+                        <div class="accordion-body p-0">
+                            <ul class="list-group list-group-flush ps-4">
+                                <li class="list-group-item border-0 py-2">
+                                    <a href="#" class="filter-link"
+                                        onclick="filterProducts('men', 'TSHIRTS')">TSHIRTS</a>
+                                </li>
+                                <li class="list-group-item border-0 py-2">
+                                    <a href="#" class="filter-link" onclick="filterProducts('men', 'SHIRTS')">SHIRTS</a>
+                                </li>
+                                <li class="list-group-item border-0 py-2">
+                                    <a href="#" class="filter-link" onclick="filterProducts('men', 'PANTS')">PANTS</a>
+                                </li>
+                                <li class="list-group-item border-0 py-2">
+                                    <a href="#" class="filter-link"
+                                        onclick="filterProducts('men', 'OUTERWEAR')">OUTERWEAR</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <a href="#" onclick="newArrival('Summer Of Us')"
+                            class="accordion-button no-chevron collapsed fw-bold text-decoration-none">summer collection</a>
+                    </h2>
+                </div>
+
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <a href="#" class="accordion-button no-chevron collapsed fw-bold text-decoration-none"
+                            onclick="renderAll()">All
+                            products</a>
+                    </h2>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <a href="#" class="accordion-button no-chevron collapsed fw-bold text-decoration-none">ABOUT
+                            US</a>
+                    </h2>
+                </div>
+
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="card">
-                    <div class="card-img-top">
-                        <img src="assets/shirts/lavendershirt.jpg" class="product-img">
-                        <img src="assets/shirts/lavendershirthover.jpg" class="hover-img base-img">
-                    </div>
-                    <div class="card-body d-flex flex-column justify-content-between mt-0">
-                        <h5 class="card-title">Corduroy Fleece Winter Jacket</h5>
-                        <p class="card-text">$17.00</p>
-                        <button class="btn">buy now</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="card">
-                    <div class="card-img-top">
-                        <img src="assets/shirts/stripsshirt.jpg" class="product-img">
-                        <img src="assets/shirts/stripsshirthover.jpg" class="hover-img base-img">
-                    </div>
-                    <div class="card-body d-flex flex-column justify-content-between mt-0">
-                        <h5 class="card-title">Corduroy Fleece Winter Jacket</h5>
-                        <p class="card-text">$17.00</p>
-                        <button class="btn">buy now</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12">
-                <div class="card">
-                    <div class="card-img-top">
-                        <img src="assets/shirts/brownshirt.jpg" class="product-img">
-                        <img src="assets/shirts/brownshirthover.jpg" class="hover-img base-img">
-                    </div>
-                    <div class="card-body d-flex flex-column justify-content-between mt-0">
-                        <h5 class="card-title">Corduroy Fleece Winter Jacket</h5>
-                        <p class="card-text">$17.00</p>
-                        <button class="btn">buy now</button>
-                    </div>
-                </div>
+
+            <div class="mt-auto p-4 border-top d-flex gap-4 justify-content-center bg-white">
+                <a href="#" class="text-dark fs-5 social-icon"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="text-dark fs-5 social-icon"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="text-dark fs-5 social-icon"><i class="bi bi-tiktok"></i></a>
             </div>
         </div>
-    </div> -->
+    </div>
+ 
+        <footer class="bg-black text-white pt-5 pb-3">
+        <div class="container text-center">
+            <img src="logo2.png" class="logo mb-4" style="filter: invert(1);">
+            <div class="d-flex justify-content-center gap-4 mb-4">
+                <a href="#" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
+                <a href="#" class="text-white fs-4"><i class="bi bi-tiktok"></i></a>
+            </div>
+            <p class="text-muted small">&copy; 2026 CELESTE RETAIL. ALL RIGHTS RESERVED.</p>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="app.js"></script>

@@ -1,0 +1,311 @@
+ :root {
+            --accent: #000000;
+            --bg: #ffffff;
+            --card-gap: 1.5rem;
+        }
+
+        body {
+            background-color: var(--bg);
+            padding: 40px 0;
+            font-family: 'Helvetica', Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* 1. Grid Logic */
+        .product-grid {
+            --bs-gutter-x: var(--card-gap);
+            --bs-gutter-y: var(--card-gap);
+        }
+
+        /* 2. Sharp Card (No Radius) */
+        .sharp-card {
+            background: #fff;
+            border: 1px solid #e5e5e5; /* Subtle border instead of shadow */
+            padding: 0; 
+            margin: 0;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: block;
+            height: 100%;
+        }
+
+        .sharp-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        /* 3. Image Square/Rect (No Radius) */
+        .img-container {
+            position: relative;
+            aspect-ratio: 3 / 4;
+            overflow: hidden;
+            border-bottom: 1px solid #e5e5e5;
+        }
+
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(20%); /* Adds a moody fashion vibe */
+            transition: filter 0.3s ease;
+        }
+
+        .sharp-card:hover img {
+            filter: grayscale(0%);
+        }
+
+        /* 4. Adaptive Text Sizes */
+        .card-info {
+            padding: 1rem;
+        }
+
+        .item-title {
+            color: #000;
+            font-weight: 600;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            /* Responsive text: smaller on mobile, larger on desktop */
+            font-size: clamp(0.8rem, 2vw, 1rem);
+            margin-bottom: 5px;
+        }
+
+        .item-price {
+            font-weight: 400;
+            color: #555;
+            display: block;
+            font-size: clamp(0.85rem, 2vw, 0.95rem);
+        }
+
+        /* 5. Mobile/Tablet Specific Adjustment for 770px */
+        @media (max-width: 770px) {
+            .card-info {
+                padding: 0.75rem;
+            }
+            .item-title {
+                letter-spacing: 0.5px;
+            }
+        }
+        /* 1. The Container: Force a clean, sharp rectangle */
+.card-img-top {
+    height: 300px !important;
+    width: 100% !important;
+    overflow: hidden !important; 
+    position: relative !important;
+    display: block !important; /* Block is safer for stacking absolute images */
+    background-color: #f0f0f0; 
+    border-radius: 0; /* Removing radius as per your previous request */
+}
+
+/* 2. Base Image (Product) */
+.base-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; 
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    margin: 0 !important; /* Removes the 30px squish */
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* 3. Hover Image (Model/Alternative) */
+.hover-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    opacity: 0; /* Hidden by default */
+    margin: 0 !important; /* Removes the 30px squish */
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* 4. The Trigger: Swap on Card Hover */
+.card:hover .hover-img {
+    opacity: 1 !important; /* Fades in the top image */
+}
+
+/* Optional: Subtle zoom effect on the base image during hover */
+.card:hover .base-img {
+    transform: scale(1.05);
+    transition: transform 0.8s ease;
+}
+/* Container for images */
+.img-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+/* Base and Hover Image Stacking */
+.img-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures clean cropping */
+    transition: opacity 0.4s ease-in-out;
+    border-radius: 0; /* Forced sharp edges */
+}
+
+.hover-img {
+    z-index: 2;
+    opacity: 0; /* Hidden by default */
+}
+
+.base-img {
+    z-index: 1;
+}
+
+/* The Hover Trigger */
+.sharp-card:hover .hover-img {
+    opacity: 1;
+}
+/* Container Settings */
+.img-container {
+    position: relative;
+    height: 350px; /* Adjusted height */
+    width: 100%;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    border: none;
+}
+
+/* Base Image Styling */
+.base-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    /* Smooth return to normal */
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease;
+}
+
+/* Hover Image Styling */
+.hover-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 2;
+    opacity: 0;
+    /* Start slightly zoomed in for the animation effect */
+    transform: scale(1.1); 
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.6s ease;
+}
+
+/* The Animation Trigger */
+.sharp-card:hover .hover-img {
+    opacity: 1;
+    transform: scale(1); /* Zooms out to normal size while fading in */
+}
+
+.sharp-card:hover .base-img {
+    transform: scale(0.95); /* Subtle shrink effect on the background image */
+    opacity: 0.7;
+}
+
+/* Card Text & Styling */
+.sharp-card {
+    text-decoration: none;
+    display: block;
+    border: 1px solid transparent;
+    transition: border 0.3s ease;
+}
+
+.sharp-card:hover {
+    border-color: #eee;
+}
+
+.item-title {
+    display: block;
+    margin-top: 15px;
+    font-weight: 700;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.item-price {
+    color: #666;
+    font-size: 0.9rem;
+}
+/* 1. The Container: This is the "window". 
+   Overflow hidden is CRITICAL here to prevent the card from growing. */
+.img-container {
+    position: relative;
+    height: 350px;
+    width: 100%;
+    overflow: hidden !important; 
+    background-color: #f0f0f0;
+    border: none;
+}
+
+/* 2. Shared Image Properties */
+.img-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Use a slow, smooth transition for that premium feel */
+    transition: transform 1.2s cubic-bezier(0.2, 1, 0.3, 1), opacity 0.6s ease;
+}
+
+/* 3. Base Image: Sits at normal scale (1) */
+.base-img {
+    z-index: 1;
+    opacity: 1;
+}
+
+/* 4. Hover Image: Sits on top, hidden, and slightly pre-scaled */
+.hover-img {
+    z-index: 2;
+    opacity: 0;
+    transform: scale(1); /* Starting point */
+}
+
+/* 5. The Hover Animation Logic */
+
+/* Zoom the Base Image OUT slightly when hovering */
+.sharp-card:hover .base-img {
+    transform: scale(1.1);
+    opacity: 0; /* Fades out as it zooms */
+}
+
+/* Zoom the Hover Image IN when it appears */
+.sharp-card:hover .hover-img {
+    opacity: 1;
+    transform: scale(1.15); /* This creates the internal zoom effect */
+}
+
+/* 6. Text Styling (Keeping it sharp and simple) */
+.sharp-card {
+    text-decoration: none;
+    display: block;
+    background: #fff;
+}
+
+.item-title {
+    display: block;
+    margin-top: 15px;
+    font-weight: 700;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}

@@ -644,20 +644,25 @@ function createCard(product) {
     if (product.discount) {
         badge = '<span class="badge-sale">' + product.discount + '</span>';
     }
+     var safeData = encodeURIComponent(JSON.stringify(product));
+   return `
+<div class="col" data-brand="${product.brand.toLowerCase()}">
+    <a href="#" class="sharp-card" onclick="showDetails('${safeData}')">
+        <div class="img-container">
+            ${badge}
+            <img src="${product.img}" class="base-img" alt="${product.title}">
 
-    return '<div class="col" data-brand="' + product.brand.toLowerCase() + '">' +
-           '    <a href="#" class="sharp-card">' +
-           '        <div class="img-container">' +
-                        badge +
-           '            <img src="' + product.img + '" class="base-img" alt="' + product.title + '">' +
-           '            <img src="' + product.hoverImg + '" class="hover-img" alt="' + product.title + ' hover">' +
-           '        </div>' +
-           '        <div class="card-info">' +
-           '            <span class="item-title">' + product.title + '</span>' +
-           '            <span class="item-price">Rs. ' + product.price.toLocaleString() + '</span>' +
-           '        </div>' +
-           '    </a>' +
-           '</div>';
+            <img src="${product.hoverImg}" class="hover-img" alt="${product.title} hover">
+            <button class="img-atc-btn" title="Add to Cart">
+        <i class="bi bi-plus"></i>
+    </button>
+        </div>
+        <div class="card-info">
+            <span class="item-title">${product.title}</span>
+            <span class="item-price">Rs. ${product.price.toLocaleString()}</span>
+        </div>
+    </a>
+</div>`;
 }
 
 function renderAll() {
@@ -745,6 +750,116 @@ function closeSidebar() {
         backdrop.parentNode.removeChild(backdrop);
     }
     document.body.style.overflow = 'auto';
+}
+    var dropdown = document.getElementById('ddown')
+
+var detailDiv = document.getElementById('detail')
+function showDetails(safeData) {
+    console.log(dropdown)
+    dropdown.style.setProperty('display', 'none', 'important');
+    var product = JSON.parse(decodeURIComponent(safeData));
+    grid.style.setProperty('display', 'none', 'important');
+    detailDiv.innerHTML = `
+<div class="container-fluid product-container">
+    <a href="#" class="back-link mb-5 " onclick="goBack()">
+    <i class="bi bi-arrow-left "></i> 
+</a>
+
+    <div class="row">
+        <div class="col-lg-6 col-md-12 product-gallery d-flex ps-lg-5">
+            <div class="thumbnails d-flex flex-column me-3">
+                <img src="${product.img}" onclick="swapImg('${product.img}')" alt="Thumb 1" class="img-thumbnail active mb-2" style="width: 110px; cursor: pointer;">
+                <img src="${product.hoverImg}" onclick="swapImg('${product.hoverImg}')" alt="Thumb 2" class="img-thumbnail mb-2" style="width: 110px; cursor: pointer;">
+            </div>
+            <div class="main-image flex-grow-1 ms-5">
+                <img src="${product.img}" id="mainImg" class="img-fluid " alt="${product.title}">
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-12 product-details mt-4 mt-lg-0 pe-lg-5">
+            <h1 class="h3 fw-bold product-title">${product.title}</h1>
+            <p class="text-muted small mb-2">WTDO081-SML-TPN</p>
+            <p class="h5 mb-3">Rs. ${product.price.toLocaleString()}</p>
+
+            <hr class="my-4">
+
+            <div class="option-group mb-4">
+                <span class="d-block small fw-bold mb-2 text-uppercase" style="letter-spacing: 1px;">Size</span>
+                <div class="size-selectors d-flex gap-2">
+                    <button class="btn btn-outline-dark rounded-0 px-3 py-2">S</button>
+                    <button class="btn btn-outline-dark rounded-0 px-3 py-2">M</button>
+                    <button class="btn btn-outline-dark rounded-0 px-3 py-2">L</button>
+                </div>
+            </div>
+
+            <div class="stock-warning mb-3 small d-flex align-items-center">
+                <span class="rounded-circle bg-warning me-2" style="width: 8px; height: 8px;"></span>
+                Low stock – 8 items left
+            </div>
+
+            <div class="d-grid gap-2 mb-4">
+                <button class="btn btn-outline-dark btn-lg rounded-0 fw-bold py-3" style="font-size: 0.8rem;">ADD TO CART</button>
+                <button class="btn btn-dark btn-lg rounded-0 fw-bold py-3" style="font-size: 0.8rem;">BUY IT NOW</button>
+            </div>
+
+            <p class="product-description small text-secondary leading-relaxed">
+                ${product.desc}
+            </p>
+            
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            Ask a Question
+                        </button>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">
+                           
+                            <form class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="name">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="inputEmail4" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="inputEmail4">
+                                </div>
+                                
+                                                         <div class="col-12">
+                                    <label for="inputAddress" class="form-label  " style="font-size: 0.8rem;">Message</label>
+                                   
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                                </div>
+                        
+                                <div class="col-12 d-flex">
+                                    <button type="submit" class="btn px-4 ms-auto submit ">send</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    </h2>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>`;
+    console.log("--- Product Clicked ---");
+    console.log(product);
+    
+    console.log("Item:", product.title);
+    console.log("Price:", product.price);
+}
+function swapImg(url){
+    var mainImg = document.getElementById('mainImg')
+    mainImg.src=url
+}
+function goBack(){
+ detailDiv.innerHTML= ""
+   grid.style.setProperty('display', 'flex', 'important');
+    dropdown.style.setProperty('display', 'block', 'important');
+
+ 
 }
 function clearAllFilters(){
  renderAll()
